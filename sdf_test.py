@@ -1,7 +1,6 @@
 import numpy as np
 import sys
 import pygame
-print(sys.version)
 
 def length(x):
     return np.sqrt(np.dot(x, x))
@@ -13,7 +12,6 @@ def distance(a, b):
     return length(a-b)
 def reflect(ray, plane):
     return ray - 2 * np.dot(ray, plane) * plane
-
 
 WHITE = pygame.Color(255, 255, 255)
 BLACK = pygame.Color(0, 0, 0)
