@@ -23,9 +23,6 @@ Obj = np.array([0.5, 1, 2])
 Box = np.array([0.7, 0.3, 0.4])*2.0
 yspeed = 0
 
-def range_shift(x, a, a2, b, b2):
-    return x*(b-a)+(a2+b2)
-
 
 def length0(a, b, c):
     r = 0
