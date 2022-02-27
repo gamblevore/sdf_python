@@ -20,6 +20,8 @@ BLACK = pygame.Color(0, 0, 0)
 Camera = np.array([0, 0, -1])
 Sun = normalize(np.array([1000, 1000, -50]))
 Obj = np.array([0.5, 1, 2])
+Box = np.array([0.7, 0.3, 0.4])*2.0
+yspeed = 0
 
 def range_shift(x, a, a2, b, b2):
     return x*(b-a)+(a2+b2)
@@ -48,7 +50,6 @@ def sdBoxFrame( p, b, e ):
         length0(q[0], q[1], p[2]) + max0(q[0], q[1], p[2])
     )
 
-Box = np.array([0.7, 0.3, 0.4])*2.0
 
 def super_awesome_sdf(P, D):
     P -= Obj
@@ -90,13 +91,12 @@ def fill_frame(w, h, Surface):
             Surface.set_at((x, (h-1)-y), col)
 
 
-yspeed = 0
 def frame_action():
     global yspeed
     yspeed -= 0.05
     Obj[1] += yspeed
     if Obj[1] <= 0.0:
-        yspeed = yspeed*0.9
+        yspeed = yspeed*-0.9
 
 
 def frame_events():
